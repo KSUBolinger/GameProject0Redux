@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/Chicken.png","C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/bin/Windows/Content/Chicken.xnb","TextureProcessor","Texture2DContent",1504,49237,0.1743674
+"C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/egg_whole_white.png","C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/bin/Windows/Content/egg.xnb","TextureProcessor","Texture2DContent",225,1109,0.0025015
+"C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/Plains.jpg","C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/bin/Windows/Content/Plains.xnb","TextureProcessor","Texture2DContent",263840,3145813,0.1229893
+"C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/Snake.png","C:/Users/halom/source/repos/cis580/GameProject0Redux/GameProject0/Content/bin/Windows/Content/Snake.xnb","TextureProcessor","Texture2DContent",1797,37205,0.005635
