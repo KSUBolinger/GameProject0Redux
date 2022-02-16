@@ -25,17 +25,18 @@ namespace GameProject0
         {
             // TODO: Add your initialization logic here
 
-            base.Initialize();
+            
             chicken = new ChickenSprite();
             snakes = new SnakeSprite[]
             {
-                new SnakeSprite((new Vector2(100, 100)), SnakeDirection.Right),
-                new SnakeSprite((new Vector2(100, 300)), SnakeDirection.Right),
-                new SnakeSprite((new Vector2(300, 100)), SnakeDirection.Right),
-                new SnakeSprite((new Vector2(300, 300)), SnakeDirection.Right)
+                new SnakeSprite((new Vector2(50, 125)), SnakeDirection.Right),
+                new SnakeSprite((new Vector2(50, 375)), SnakeDirection.Right),
+                new SnakeSprite((new Vector2(400, 125)), SnakeDirection.Right),
+                new SnakeSprite((new Vector2(400, 375)), SnakeDirection.Right)
             };
 
-            egg = new EggSprite(new Vector2(150, 150));
+            egg = new EggSprite(new Vector2(250, 250));
+            base.Initialize();
         }
 
         protected override void LoadContent()

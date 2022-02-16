@@ -11,7 +11,7 @@ namespace GameProject0
     public class ChickenSprite
     {
         private Texture2D texture;
-        private Vector2 position = new Vector2(200, 200);
+        private Vector2 position = new Vector2(400, 250);
 
         public void LoadContent(ContentManager content)
         {
@@ -27,7 +27,7 @@ namespace GameProject0
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             var source = new Rectangle(32, 64, 32, 32);
-            spriteBatch.Draw(texture, position, source, Color.White);
+            spriteBatch.Draw(texture, position, source, Color.White, 0, new Vector2(0,0), 2.0f, SpriteEffects.None, 0);
         }
 
     }

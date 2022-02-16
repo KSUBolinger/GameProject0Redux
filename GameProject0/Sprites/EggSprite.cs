@@ -29,7 +29,7 @@ namespace GameProject0
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             var source = new Rectangle(0, 0, 16, 16);
-            spriteBatch.Draw(texture, position, source, Color.White, 0, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+            spriteBatch.Draw(texture, position, source, Color.White, 0, new Vector2(0, 0), 3.0f, SpriteEffects.None, 0);
         }
     }
 }
