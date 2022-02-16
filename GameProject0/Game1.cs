@@ -9,7 +9,11 @@ namespace GameProject0
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private SnakeSprite[] snakes;
+
         private ChickenSprite chicken;
+        //private Vector2 chickenPosition = new Vector2(400, 250);
+        
+
         private EggSprite egg;
         private SpriteFont bangers;
         private Texture2D backgroundTexture; 
@@ -78,12 +82,17 @@ namespace GameProject0
 
             _spriteBatch.Draw(backgroundTexture, new Vector2(0, 0), Color.White);
             chicken.Draw(gameTime, _spriteBatch);
-            foreach(var snake in snakes)
+
+            //var source = new Rectangle(32, 64, 32, 32);
+            //_spriteBatch.Draw(texture, chickenPosition, source, Color.White, 0, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+            foreach (var snake in snakes)
             {
                 snake.Draw(gameTime, _spriteBatch);
             }
             egg.Draw(gameTime, _spriteBatch);
-            _spriteBatch.DrawString(bangers, $"Use 'ESC' to exit game", new Vector2(200, 15), Color.Black);
+            _spriteBatch.DrawString(bangers, $"Welcome to Chicken Farm!", new Vector2(200, 30), Color.Black, 0, new Vector2(0, 0), 2.5f, SpriteEffects.None, 0);
+            _spriteBatch.DrawString(bangers, $"Use 'ESC' to exit game", new Vector2(300, 425), Color.Black, 0, new Vector2(0,0), 1.5f, SpriteEffects.None, 0);
 
             _spriteBatch.End();
 
