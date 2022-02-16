@@ -26,7 +26,8 @@ namespace GameProject0
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, Color.White);
+            var source = new Rectangle(32, 64, 32, 32);
+            spriteBatch.Draw(texture, position, source, Color.White);
         }
 
     }
