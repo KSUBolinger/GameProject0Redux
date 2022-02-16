@@ -8,12 +8,17 @@ namespace GameProject0
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private SnakeSprite[] snakes;
+        private ChickenSprite chicken;
+        private EggSprite egg;
+        private SpriteFont bangers;
+        private Texture2D backgroundTexture; 
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
         }
 
         protected override void Initialize()
@@ -21,6 +26,16 @@ namespace GameProject0
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            chicken = new ChickenSprite();
+            snakes = new SnakeSprite[]
+            {
+                new SnakeSprite((new Vector2(100, 100)), SnakeDirection.Right),
+                new SnakeSprite((new Vector2(100, 300)), SnakeDirection.Right),
+                new SnakeSprite((new Vector2(300, 100)), SnakeDirection.Right),
+                new SnakeSprite((new Vector2(300, 300)), SnakeDirection.Right)
+            };
+
+            egg = new EggSprite(new Vector2(150, 150));
         }
 
         protected override void LoadContent()
@@ -28,6 +43,14 @@ namespace GameProject0
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            backgroundTexture = Content.Load<Texture2D>("Plains");
+            chicken.LoadContent(Content);
+            foreach(var snake in snakes)
+            {
+                snake.LoadContent(Content);
+            }
+            egg.LoadContent(Content);
+            bangers = Content.Load<SpriteFont>("bangers");
         }
 
         protected override void Update(GameTime gameTime)
@@ -36,6 +59,11 @@ namespace GameProject0
                 Exit();
 
             // TODO: Add your update logic here
+            chicken.Update(gameTime);
+            foreach(var snake in snakes)
+            {
+                snake.Update(gameTime);
+            }
 
             base.Update(gameTime);
         }
@@ -45,6 +73,18 @@ namespace GameProject0
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+
+            _spriteBatch.Draw(backgroundTexture, new Vector2(0, 0), Color.White);
+            chicken.Draw(gameTime, _spriteBatch);
+            foreach(var snake in snakes)
+            {
+                snake.Draw(gameTime, _spriteBatch);
+            }
+            egg.Draw(gameTime, _spriteBatch);
+            _spriteBatch.DrawString(bangers, $"Use 'ESC' to exit game", new Vector2(200, 15), Color.Black);
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
