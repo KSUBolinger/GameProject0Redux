@@ -87,6 +87,6 @@ namespace GameProject0
             SpriteEffects spriteEffects = (flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             spriteBatch.Draw(texture, position, source, Color.White, 0, new Vector2(0, 0), 1.25f, spriteEffects, 0);
         }
-        }
     }
 }
+
